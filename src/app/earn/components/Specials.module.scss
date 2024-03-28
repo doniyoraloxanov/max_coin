@@ -1,0 +1,67 @@
+@import "@styles/colors.scss";
+@import "@styles/mixins.scss";
+
+.specials {
+  &__title {
+    margin-top: 2.5rem;
+
+    span {
+      opacity: 0.75;
+      margin-left: 1rem;
+    }
+  }
+
+  &__slider {
+    margin-top: 0.75rem;
+  }
+
+  &__list {
+    @include glassBg;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    border-radius: $border_radius;
+    padding: 0.5rem 0;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      gap: 1rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+
+      &--completed {
+        opacity: 0.5;
+      }
+
+      &-image {
+        @include glassBgDark;
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: $border_radius;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $text_color;
+        opacity: 0.75;
+      }
+
+      &-bonus-wrap {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      &-icon {
+        position: absolute;
+        right: 0.5rem;
+      }
+    }
+  }
+}

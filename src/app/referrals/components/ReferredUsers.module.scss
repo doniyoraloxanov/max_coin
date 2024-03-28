@@ -1,0 +1,54 @@
+@import "@styles/colors.scss";
+@import "@styles/mixins.scss";
+
+.list {
+  @include glassBg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem;
+  margin-top: 0.5rem;
+  border-radius: $border_radius;
+  gap: 0.5rem;
+
+  &__item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    border-radius: 0.5rem;
+    color: $text_color;
+    position: relative;
+
+    &-avatar {
+      display: block;
+      width: 60px !important;
+      height: 60px !important;
+    }
+
+    &-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-level {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    &-coin {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    &-status {
+      position: absolute;
+      right: 0.5rem;
+      font-weight: 600;
+      color: $coin_color;
+    }
+  }
+}

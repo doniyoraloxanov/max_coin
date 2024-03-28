@@ -1,0 +1,124 @@
+@import "@styles/mixins.scss";
+@import "@styles/colors.scss";
+
+.stats {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+  }
+
+  &__balance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+
+    &__value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+  }
+
+  &__description {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $link_color;
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    list-style: none;
+    gap: 3rem;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      &-content-value {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      &-content-description {
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.8);
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  &__button {
+    @include button;
+  }
+
+  &__info-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  &__info-subtitle {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  &__info-value {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  &__info-value--spent {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fd6b01;
+  }
+
+  &__info-balance {
+    margin-top: 1rem;
+  }
+
+  &__info-earned {
+    margin-top: 2rem;
+  }
+
+  &__info-spent {
+    margin-top: 1.5rem;
+  }
+
+  &__info-button {
+    width: 100%;
+    margin-top: 2.5rem;
+    padding: 1rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: $border_radius;
+
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+  }
+}
+
+.stats::after {
+  @include yellowBottomShadow;
+}

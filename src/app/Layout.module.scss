@@ -1,0 +1,8 @@
+@import "@styles/colors.scss";
+
+.root {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  background-color: $bg_color;
+}

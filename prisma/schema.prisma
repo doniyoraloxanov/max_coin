@@ -1,0 +1,73 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id        String  @id @default(uuid())
+  firstName String
+  lastName  String?
+  username  String? @unique
+
+  languageCode String?
+  status       userStatus         @default(ACTIVE)
+  role         Role               @default(USER)
+  isVerified   VerificationStatus @default(IDLE)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  referredUsers  User[]        @relation("ReferredUsers")
+  referredById   String?
+  referredBy     User?         @relation("ReferredUsers", fields: [referredById], references: [id])
+  referralStatus ReferalStatus @default(IDLE)
+
+  insta_profile_url String?
+  x_profile_url     String?
+
+  point     Point[]
+  followers User[]  @relation("Followers")
+  following User[]  @relation("Followers")
+}
+
+model Point {
+  id          String   @id @default(uuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  amount      Int      @default(0)
+  pointReason String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+enum ReferalStatus {
+  IDLE
+  ACTIVE
+}
+
+enum VerificationStatus {
+  IDLE   @map("IDEAL")
+  PASSED
+  FAILED
+
+  @@map("IsVerified")
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+enum userStatus {
+  ACTIVE
+  BANNED
+  DELETED
+}

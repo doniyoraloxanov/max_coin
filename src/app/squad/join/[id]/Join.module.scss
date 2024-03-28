@@ -1,0 +1,58 @@
+@import "@styles/colors.scss";
+@import "@styles/mixins.scss";
+
+.join {
+  @include earnBgGradient;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__users {
+    max-width: 254px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  &__user {
+    position: absolute;
+    right: 0;
+  }
+
+  &__content {
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    font-weight: 600;
+    color: $text_color;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  &__description {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    color: $text_color;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  &__button {
+    padding: 1rem;
+    border-radius: $border_radius;
+    width: calc(100% - 2.5rem);
+    border: none;
+    position: fixed;
+    bottom: 2.5rem;
+
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: $button_color;
+  }
+}

@@ -1,0 +1,36 @@
+@import "../../styles/colors.scss";
+
+.coming {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: transparent; /* Set text color to transparent */
+    background: linear-gradient(
+      45deg,
+      #ffa900,
+      #f47f3c
+    ); /* Example gradient colors */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the text color transparent */
+    animation: titleAnimation 2s infinite;
+  }
+}
+
+@keyframes titleAnimation {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}

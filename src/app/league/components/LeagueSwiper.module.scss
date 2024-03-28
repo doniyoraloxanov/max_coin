@@ -1,0 +1,55 @@
+@import "@styles/colors.scss";
+
+.league-swiper {
+  margin-top: 2rem;
+  position: relative;
+
+  &__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $bg_color;
+  }
+
+  &__item {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 2rem;
+    color: $text_color;
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    color: $text_color;
+    font-weight: 600;
+    opacity: 0.7;
+  }
+
+  &__arrows {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    z-index: 100;
+  }
+
+  &__arrow {
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}

@@ -1,0 +1,79 @@
+@import "@styles/colors.scss";
+@import "@styles/mixins.scss";
+
+.gift {
+  width: 100%;
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  z-index: 200;
+  background-color: $secondary_bg_color;
+  padding: 1.5rem;
+  border-radius: 0.75rem 0.75rem 0 0;
+  transition: all 0.3s ease;
+
+  &--open {
+    bottom: 0;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    color: $text_color;
+    font-weight: 600;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    color: $text_color;
+    font-weight: 400;
+  }
+
+  &__close {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.21);
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    gap: 1rem;
+  }
+
+  &__item {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.21);
+    border-radius: $border_radius;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+
+    &--selected {
+      border: 1px solid $button_color;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    border-radius: $border_radius;
+    border: none;
+    background: $button_color;
+    margin-top: 1.25rem;
+  }
+}

@@ -1,0 +1,55 @@
+@import "@styles/colors.scss";
+@import "@styles/mixins.scss";
+
+.top {
+  text-align: center;
+  padding-top: 2rem;
+
+  &__link {
+    color: $link_color;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  &__item {
+    @include glassBg;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 1rem;
+    border-radius: $border_radius;
+    gap: 1rem;
+    margin-top: 1.75rem;
+    cursor: pointer;
+
+    &-image {
+      @include glassBgDark;
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: $border_radius;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: $text_color;
+      opacity: 0.75;
+    }
+
+    &-bonus-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    &-icon {
+      position: absolute;
+      right: 1rem;
+    }
+  }
+}

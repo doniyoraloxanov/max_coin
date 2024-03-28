@@ -1,0 +1,40 @@
+@import "@styles/colors.scss";
+
+.squad__header {
+  padding: 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: $text_color;
+    margin-top: 0.2rem;
+  }
+
+  &-subtitle {
+    color: $text_color;
+    text-align: center;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    gap: 0.5rem;
+  }
+
+  &-link {
+    color: $text_color;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: underline;
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+}

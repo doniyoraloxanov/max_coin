@@ -1,0 +1,97 @@
+@import "@styles/colors.scss";
+
+.squad__boost {
+  width: 100%;
+  padding: 3.5rem 2rem;
+  position: fixed;
+  z-index: 10;
+  bottom: -100%;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 12px 12px 0 0;
+  backdrop-filter: blur(100px);
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &--open {
+    bottom: 0;
+  }
+
+  &-close {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.25rem;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    border: none;
+
+    &-icon {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+  }
+
+  &-title {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    font-weight: 600;
+    color: $text_color;
+    margin-top: 2rem;
+  }
+
+  &-description {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: $text_color;
+    margin-top: 1rem;
+    word-spacing: 2px;
+
+    &--bold {
+      font-weight: 600;
+    }
+
+    span {
+      color: $link_color;
+    }
+  }
+
+  &-option {
+    width: 100%;
+    display: block;
+    padding: 1rem 0;
+    background-color: rgba(255, 255, 255, 0.36);
+    border-radius: $border_radius;
+    margin-top: 0.75rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: $text_color;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border 0.3s;
+
+    &--active {
+      border: 2px solid $link_color;
+    }
+  }
+
+  &-button {
+    width: 100%;
+    display: block;
+    padding: 1rem 0;
+    border: none;
+    background-color: $button_color;
+    border-radius: $border_radius;
+    margin-top: 1rem;
+    color: $text_color;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken($button_color, 10%);
+    }
+  }
+}

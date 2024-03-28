@@ -1,0 +1,30 @@
+@import "@styles/colors.scss";
+
+.squad__item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  position: relative;
+  padding: 0.5rem 1rem;
+
+  &-title {
+    font-size: 1rem;
+    color: $text_color;
+  }
+
+  &-level-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  &-level {
+    font-size: 14px;
+    color: $text_color;
+  }
+
+  &-icon {
+    position: absolute;
+    right: 0.5rem;
+  }
+}

@@ -1,0 +1,11 @@
+@import "@styles/mixins.scss";
+
+.boost {
+  min-height: 100vh;
+  height: 100%;
+  padding: 2.5rem 0;
+}
+
+.boost::before {
+  @include yellowBottomShadow;
+}

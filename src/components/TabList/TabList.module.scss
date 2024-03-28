@@ -1,0 +1,67 @@
+@import "@styles/colors.scss";
+
+.tablist__list {
+  margin-top: 0.8rem;
+  background-color: rgba(26, 22, 22, 0.6);
+  padding: 1rem 0.5rem;
+  border-radius: $border_radius;
+
+  &-tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-tab {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: border 0.3s;
+    color: $text_color;
+    font-size: 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1rem;
+
+    &--active {
+      border-bottom: 1px solid $text_color;
+    }
+  }
+
+  &-members {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 1.75rem;
+
+    &-avatar {
+      margin-left: 0.5rem;
+    }
+
+    &-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: $text_color;
+    }
+
+    &-amount {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      span {
+        font-size: 0.9rem;
+        color: $text_color;
+        opacity: 0.75;
+      }
+    }
+  }
+}

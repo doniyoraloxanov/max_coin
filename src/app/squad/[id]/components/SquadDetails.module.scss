@@ -1,0 +1,8 @@
+@import "@styles/colors.scss";
+@import "@styles/mixins.scss";
+
+.squad__details {
+  @include squadDetailsBgGradient;
+  min-height: 100vh;
+  padding: 0.5rem;
+}

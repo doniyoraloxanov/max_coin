@@ -1,0 +1,67 @@
+@import "@styles/colors.scss";
+@import "@styles/mixins.scss";
+
+.bonus {
+  @include glassBg;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: $border_radius;
+  margin-top: 0.5rem;
+
+  &__heading {
+    margin-top: 2.5rem;
+    color: $coin_color;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &-sticker {
+      width: 60px !important;
+      height: 60px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-title {
+      color: $text_color;
+      font-size: 18px;
+
+      span {
+        color: $link_color;
+      }
+    }
+
+    &-text {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      color: $hint_color;
+      font-size: 1rem;
+      &-number {
+        color: $coin_color;
+      }
+    }
+    &-details {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      cursor: pointer;
+      border-radius: 0.5rem;
+
+      &-icon {
+        position: absolute;
+        right: 0.5rem;
+        color: $text_color;
+      }
+    }
+  }
+}
