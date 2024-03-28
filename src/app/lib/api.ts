@@ -2,7 +2,7 @@ import axios from "axios";
 import { cookies } from "next/headers";
 
 const api = axios.create({
-  baseURL: "https://mobapi.testexus.live",
+  baseURL: "https://maxapi.testexus.live",
 });
 
 api.interceptors.request.use((config) => {

@@ -12,7 +12,7 @@ const onStart = async (ctx: BotContext) => {
         {
           reply_markup: new InlineKeyboard().url(
             "Share Referral Link",
-            `https://t.me/share/url?text=🎁 Join Mob and start Earning 🎁🎁🎁 &url=https://t.me/${process.env.NEXT_PUBLIC_BOT_USERNAME}?start=${ctx.from?.id}`
+            `https://t.me/share/url?text=🎁 Join max and start Earning 🎁🎁🎁 &url=https://t.me/${process.env.NEXT_PUBLIC_BOT_USERNAME}?start=${ctx.from?.id}`
           ),
         }
       );
@@ -21,10 +21,10 @@ const onStart = async (ctx: BotContext) => {
     }
   }
 
-  await ctx.reply("Hello!, Welcome to MOB", {
+  await ctx.reply("Hello!, Welcome to max", {
     reply_markup: new InlineKeyboard().webApp(
       "Launch App",
-      process.env.NEXT_PUBLIC_AP_URL ?? "https://mob-kappa.vercel.app"
+      process.env.NEXT_PUBLIC_AP_URL ?? "https://max-kappa.vercel.app"
     ),
   });
 };

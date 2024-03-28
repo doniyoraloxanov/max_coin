@@ -50,11 +50,11 @@ const nextConfig = {
         pathname: "/**",
       },
       {
-        hostname: "mob.com",
+        hostname: "max.com",
         pathname: "/**",
       },
       {
-        hostname: "app.mob.com",
+        hostname: "app.max.com",
         pathname: "/**",
       },
       {

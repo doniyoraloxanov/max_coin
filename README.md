@@ -1,4 +1,4 @@
-This is MOB project codebase. Before making any changes read [`UPGRADING.md`](UPGRADING.md)
+This is max project codebase. Before making any changes read [`UPGRADING.md`](UPGRADING.md)
 
 # Getting started
 

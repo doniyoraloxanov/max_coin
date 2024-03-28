@@ -1,7 +1,7 @@
 import { BotContext } from "@webbot/lib/botContext";
 
 const handleMessage = async (ctx: BotContext) => {
-  await ctx.reply("Hello!, Welcome to MOB");
+  await ctx.reply("Hello!, Welcome to max");
 };
 
 export { handleMessage };

@@ -17,7 +17,7 @@ export const useApp = create(
       },
     }),
     {
-      name: "mob-app",
+      name: "max-app",
     }
   )
 );

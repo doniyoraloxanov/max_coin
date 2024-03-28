@@ -16,7 +16,7 @@ const GlobalLoader: FC<Props> = ({ onBackdropClick }) => {
     <Box className={cn("global-locker")} onClick={onBackdropClick}>
       <Box className={cn("global-locker__content")}>
         <Box className={cn("global-locker__loader")}></Box>
-        <p className={cn("global-locker__text")}>MOB</p>
+        <p className={cn("global-locker__text")}>max</p>
       </Box>
     </Box>
   );

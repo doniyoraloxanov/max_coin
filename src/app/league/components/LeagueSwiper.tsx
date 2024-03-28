@@ -63,7 +63,7 @@ const LeagueSwiper = (props: Props) => {
               height={140}
             />
             <p className={cn("league-swiper__title")}>Silver League</p>
-            <p className={cn("league-swiper__subtitle")}>from 5K MOB</p>
+            <p className={cn("league-swiper__subtitle")}>from 5K max</p>
           </div>
         </SwiperSlide>
         <SwiperSlide className={cn("league-swiper__slide")}>
@@ -76,7 +76,7 @@ const LeagueSwiper = (props: Props) => {
               height={140}
             />
             <p className={cn("league-swiper__title")}>Gold League</p>
-            <p className={cn("league-swiper__subtitle")}>from 1M MOB</p>
+            <p className={cn("league-swiper__subtitle")}>from 1M max</p>
           </div>
         </SwiperSlide>
         <SwiperSlide className={cn("league-swiper__slide")}>
@@ -89,7 +89,7 @@ const LeagueSwiper = (props: Props) => {
               height={140}
             />
             <p className={cn("league-swiper__title")}>Platinum League</p>
-            <p className={cn("league-swiper__subtitle")}>from 5M MOB</p>
+            <p className={cn("league-swiper__subtitle")}>from 5M max</p>
           </div>
         </SwiperSlide>
         <SwiperSlide className={cn("league-swiper__slide")}>
@@ -102,7 +102,7 @@ const LeagueSwiper = (props: Props) => {
               height={140}
             />
             <p className={cn("league-swiper__title")}>Diamond League</p>
-            <p className={cn("league-swiper__subtitle")}>from 10M MOB</p>
+            <p className={cn("league-swiper__subtitle")}>from 10M max</p>
           </div>
         </SwiperSlide>
         <div className={cn("league-swiper__arrows")}>

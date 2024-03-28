@@ -2,7 +2,7 @@ export enum POINT_REASON {
   JOINED__CHANNEL = "JOINED__CHANNEL",
 }
 
-export const API_BASE_URL = "https://mobapi.testexus.live";
+export const API_BASE_URL = "https://maxapi.testexus.live";
 
 export const ENDPOINTS = {
   START: `${API_BASE_URL}/start`,

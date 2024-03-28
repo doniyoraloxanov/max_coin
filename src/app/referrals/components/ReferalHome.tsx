@@ -36,7 +36,7 @@ const ReferalHome = () => {
         <Box className={cn("referral__main")}>
           <BackButton isBackable={true} onClick={router.back} />
           <Typography className={cn("referral__main-title")} variant="h1">
-            MOB
+            max
           </Typography>
           <RippleBase
             className={cn("referral__main-leaders")}

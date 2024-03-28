@@ -41,7 +41,7 @@ export const blackOpsOne = Black_Ops_One({
 });
 
 export const metadata = {
-  title: "MOB",
+  title: "max",
   description: "Developed by",
 };
 

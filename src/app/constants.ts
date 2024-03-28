@@ -50,7 +50,7 @@ export const levelsMap = levels.reduce((acc, level) => {
 
 export const referredUsers = [
   {
-    firstName: "MEM MOB",
+    firstName: "MEM max",
     level: "Bronze",
     points: [
       {
@@ -60,7 +60,7 @@ export const referredUsers = [
     status: "+ 43k",
   },
   {
-    firstName: "MOB Vulcan",
+    firstName: "max Vulcan",
     level: "Diamod",
     points: [
       {
@@ -75,7 +75,7 @@ export const earnBoosters = [
   {
     id: 1,
     image: "/images/boosters/1.png",
-    title: "Earn 1000 MOB",
+    title: "Earn 1000 max",
     amount: 3000,
   },
   {
@@ -117,14 +117,14 @@ export const specials = [
   {
     id: 4,
     image: "/images/specials/4.png",
-    title: "Earn 1000 MOB",
+    title: "Earn 1000 max",
     amount: 3000,
     isCompleted: false,
   },
   {
     id: 5,
     image: "/images/specials/1.png",
-    title: "Follow MOB Coin",
+    title: "Follow max Coin",
     amount: 100000,
     isCompleted: true,
   },
@@ -207,14 +207,14 @@ export const squads = [
   {
     id: 1,
     image: "/images/squad/1.png",
-    title: "MEM MOB",
+    title: "MEM max",
     level: "Diamond",
     icon: "/icons/diamond-cup.svg",
   },
   {
     id: 2,
     image: "/images/squad/1.png",
-    title: "MOB Vulcan",
+    title: "max Vulcan",
     level: "Bronze",
     icon: "/icons/bronze-cup.svg",
   },
@@ -242,7 +242,7 @@ export const squads = [
   {
     id: 6,
     image: "/images/squad/1.png",
-    title: "MOB kan",
+    title: "max kan",
     level: "Bronze",
     icon: "/icons/bronze-cup.svg",
   },
@@ -269,7 +269,7 @@ export const squadMembers = [
   },
   {
     id: 4,
-    name: "MEM MOB",
+    name: "MEM max",
     image: undefined,
     amount: 856245,
   },
@@ -338,7 +338,7 @@ export const boostHowItWorks = [
   {
     id: 1,
     image: "/icons/coin.svg",
-    title: "Tap-to-earn MOB",
+    title: "Tap-to-earn max",
     description: "Yes, that’s easy",
   },
   {

@@ -17,9 +17,9 @@ const Stats = (props: Props) => {
   return (
     <div className={cn("stats")}>
       <div className={cn("stats__content")}>
-        <p className={cn("stats__title")}>Total MOB Coin Balance</p>
+        <p className={cn("stats__title")}>Total max Coin Balance</p>
         <div className={cn("stats__balance")}>
-          <Image src="/icons/coin.svg" alt="MOB Coin" width={30} height={30} />
+          <Image src="/icons/coin.svg" alt="max Coin" width={30} height={30} />
           <p className={cn("stats__balance__value")}>29,908,678,098,898</p>
         </div>
         <p
@@ -69,7 +69,7 @@ const Stats = (props: Props) => {
       >
         <h3 className={cn("stats__info-title")}>Details</h3>
         <div className={cn("stats__info-balance")}>
-          <span className={cn("stats__info-subtitle")}>Total MOB Balance</span>
+          <span className={cn("stats__info-subtitle")}>Total max Balance</span>
           <span className={cn("stats__info-value")}>34,908,678,098,898</span>
         </div>
         <div className={cn("stats__info-earned")}>

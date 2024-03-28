@@ -59,7 +59,7 @@ export default async function Join({ params, searchParams }: Props) {
             />
           </div>
 
-          <p className={cn("join__title")}>Join MEM MOB Squad</p>
+          <p className={cn("join__title")}>Join MEM max Squad</p>
           <p className={cn("join__description")}>
             Every tap counts towards your squad score. <br /> Squad leaderboard
             will show <br /> your contribution.

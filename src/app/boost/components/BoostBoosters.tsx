@@ -165,7 +165,7 @@ const BoostBoosters = (props: Props) => {
         </div>
         <h2>Multitap</h2>
         <p>
-          Increase amount of MOB <br />
+          Increase amount of max <br />
           you can earn per tap
           <br />
           <br />
@@ -233,7 +233,7 @@ const BoostBoosters = (props: Props) => {
         <p>
           Increase your energy limit, so you can mine more per session <br />{" "}
           <br />
-          +500 MOB for each level.
+          +500 max for each level.
         </p>
         <div className={cn("boosters__info-container")}>
           <Image
