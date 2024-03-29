@@ -14,7 +14,7 @@ type Props = {
 
 const Avatar: FC<Props> = ({ className, size = "md", url, name }) => {
   const child = url ? (
-    <RAvatar.Image className={cn("avatar__img")} src={url} alt="maxavatar" />
+    <RAvatar.Image className={cn("avatar__img")} src={url} alt="Maxavatar" />
   ) : (
     <RAvatar.Fallback className={cn("avatar__fallback")} delayMs={600}>
       {name?.split(" ").map((n) => n[0])}

@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -33,9 +30,11 @@ model User {
   insta_profile_url String?
   x_profile_url     String?
 
-  point     Point[]
-  followers User[]  @relation("Followers")
-  following User[]  @relation("Followers")
+  point        Point[]
+  Verification Verification[]
+
+  totalScore Int @default(0)
+  energy     Int @default(1000)
 }
 
 model Point {
@@ -46,6 +45,27 @@ model Point {
   pointReason String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+model Verification {
+  id String @id @default(uuid())
+
+  title            String
+  shortDescription String?
+  description      String?
+
+  isCompleted  Boolean @default(false)
+  rewardAmount Float?
+
+  icon    String?
+  payload String?
+  url     String?
+
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 enum ReferalStatus {

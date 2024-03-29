@@ -15,6 +15,7 @@ import ReferredUsers from "./ReferredUsers";
 import BonuseList from "./BonuseList";
 import Image from "next/image";
 import SendGift from "./SendGift";
+import { User } from "@prisma/client";
 
 const cn = classnames.bind(styles);
 
@@ -36,7 +37,7 @@ const ReferalHome = () => {
         <Box className={cn("referral__main")}>
           <BackButton isBackable={true} onClick={router.back} />
           <Typography className={cn("referral__main-title")} variant="h1">
-            max
+            Max
           </Typography>
           <RippleBase
             className={cn("referral__main-leaders")}

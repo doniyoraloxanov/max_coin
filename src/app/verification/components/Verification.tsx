@@ -47,7 +47,7 @@ const Verification = (props: Props) => {
   return (
     <div className={cn("task")}>
       <Typography variant="h2">
-        Welcome to <span>max</span>
+        Welcome to <span>Max</span>
       </Typography>
       <Typography variant="caption">
         To use our bot, Please complete the following tasks
@@ -67,7 +67,7 @@ const Verification = (props: Props) => {
             />
           </div>
           <div>
-            <p className={cn("task__option--title")}>max Announcement</p>
+            <p className={cn("task__option--title")}>Max Announcement</p>
             {renderBonus(isJoinedChannel)}
           </div>
         </RippleBase>
@@ -85,7 +85,7 @@ const Verification = (props: Props) => {
             />
           </div>
           <div>
-            <p className={cn("task__option--title")}>max Community</p>
+            <p className={cn("task__option--title")}>Max Community</p>
             {renderBonus(isJoinedGroup)}
           </div>
         </RippleBase>

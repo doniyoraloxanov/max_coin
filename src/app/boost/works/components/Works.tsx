@@ -43,7 +43,7 @@ const Works = (props: Props) => {
             <span className={cn("works__socials-item-title")}>Follow</span>
           </div>
         </div>
-        <h2 className={cn("works__title")}>max</h2>
+        <h2 className={cn("works__title")}>Max</h2>
         <div className={cn("works__list")}>
           {boostHowItWorks.map((item) => (
             <div className={cn("works__list-item")} key={item.id}>

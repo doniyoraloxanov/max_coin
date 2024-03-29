@@ -22,7 +22,7 @@ const LeagueHeader = (props: Props) => {
       }}
     >
       <AvatarList />
-      <p className={cn("league-header__info")}>25,526,145 maxcoiners</p>
+      <p className={cn("league-header__info")}>25,526,145 Maxcoiners</p>
       <div className={cn("league-header__stats")}>
         <span>Stats</span>
         <Image

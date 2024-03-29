@@ -1,12 +1,15 @@
 import { MemorySessionStorage } from "grammy";
 import { type ChatMember } from "grammy/types";
 import path from "path";
+import { BotContext } from "../botContext";
+import { I18n, I18nFlavor } from "@grammyjs/i18n";
 
 export const adapter = new MemorySessionStorage<ChatMember>();
 
 export type GenerationResponse = {
   artifacts: Array<{
     base64: string;
+    p;
     seed: number;
     finishReason: string;
   }>;
@@ -40,3 +43,9 @@ export const keyboards = {
 };
 
 export const POINT = 3;
+
+export const i18n = new I18n<BotContext>({
+  defaultLocale: "en",
+  useSession: true,
+  directory: "src/locales",
+});

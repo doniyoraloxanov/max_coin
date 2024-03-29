@@ -49,7 +49,7 @@ const TouchRipple = React.forwardRef<TouchRippleActions, TouchRippleProps>(
       }
     }, [ripples]);
 
-    // Used to filter out mouse emulated events on maxile.
+    // Used to filter out mouse emulated events on Maxile.
     const ignoringMouseDown = React.useRef(false);
     // We use a timer in order to only show the ripples for touch "click" like events.
     // We don't want to display the ripple for touch scroll events.
@@ -143,7 +143,7 @@ const TouchRipple = React.forwardRef<TouchRippleActions, TouchRippleProps>(
         if (center) {
           rippleSize = Math.max(rect.width, rect.height);
 
-          // For some reason the animation is broken on maxile Chrome if the size is even.
+          // For some reason the animation is broken on Maxile Chrome if the size is even.
           if (rippleSize % 2 === 0) {
             rippleSize += 1;
           }

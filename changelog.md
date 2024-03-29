@@ -4,7 +4,7 @@ _If you are upgrading: please see [`UPGRADING.md`](UPGRADING.md)._
 
 ### Added
 
-- **FEAT:** init `max` project
+- **FEAT:** init `Max` project
 
 ### Fixed
 

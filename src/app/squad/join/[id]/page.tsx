@@ -1,12 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
-import classNames from "classnames/bind";
-import styles from "./Join.module.scss";
-import Image from "next/image";
 import BackButton from "@/components/BackButton";
+import classNames from "classnames/bind";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { joinSquadAction } from "@/app/actions/action";
+import styles from "./Join.module.scss";
 
 const cn = classNames.bind(styles);
 
@@ -26,7 +24,6 @@ export default async function Join({ params, searchParams }: Props) {
   );
 
   const joinSquad = async () => {
-    await joinSquadAction(squadName, searchParams.userid as string);
     console.log("Join squad");
     router.back();
   };
@@ -59,7 +56,7 @@ export default async function Join({ params, searchParams }: Props) {
             />
           </div>
 
-          <p className={cn("join__title")}>Join MEM max Squad</p>
+          <p className={cn("join__title")}>Join MEM Max Squad</p>
           <p className={cn("join__description")}>
             Every tap counts towards your squad score. <br /> Squad leaderboard
             will show <br /> your contribution.
