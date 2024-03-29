@@ -1,56 +1,30 @@
 "use client";
 
-import { User } from "@/app/lib/constants";
 import BackButton from "@/components/BackButton";
 import Icon from "@/components/Icon";
 import RippleBase from "@/components/RippleBase";
 import { getTgUser } from "@/utils";
-import {
-  getProfileAction,
-  incrementScoreAction,
-} from "@webbot/app/actions/action";
+
+import { GetSingleUser } from "@/utils/getSingleUser";
 import classNames from "classnames/bind";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import styles from "./Home.module.scss";
 import HomeMenu from "./HomeMenu";
-import useSWR from "swr";
-import { userApi, UserApiKeys } from "@webbot/utils/api/userApi";
+import { incrementScoreAction } from "@/app/actions/score";
 
 const cn = classNames.bind(styles);
 
-const Home = ({
-  user,
-  setUser,
-}: {
-  user: User | null;
-  setUser: (user: User) => void;
-}) => {
+const Home = () => {
   const tgUser = getTgUser();
   const router = useRouter();
-  const userid = tgUser?.user?.id.toString()!;
+  const { user, mutate: refetch } = GetSingleUser(tgUser?.user?.id.toString()!);
 
-  const tapCount = 1;
-
-  // const {
-  //   data: users,
-  //   error,
-  //   isLoading,
-  //   mutate: refetch,
-  // } = useSWR(UserApiKeys.getProfile, userApi.getProfile);
-
-  const handleCoinIconClick = async () => {
-    try {
-      await incrementScoreAction(userid!, tapCount);
-
-      const updatedUserData = await getProfileAction(userid);
-      setUser(updatedUserData);
-    } catch (e) {
-      console.error("Error occurred while incrementing score:", e);
-    }
+  const handleCoinClick = async () => {
+    console.log("coin clicked");
+    await incrementScoreAction(tgUser?.user?.id.toString()!);
+    refetch();
   };
-
-  // console.log("User Home ", users);
 
   return (
     <>
@@ -78,7 +52,7 @@ const Home = ({
                   height={36}
                 />
 
-                <span>{user?.mine_balance!}</span>
+                <span>{user?.totalScore}</span>
               </div>
               <div
                 className={cn("home__main-level")}
@@ -93,7 +67,7 @@ const Home = ({
                   height={20}
                 />
 
-                <span>{user?.league}</span>
+                <span>Bronze</span>
                 <Icon icon="right" size="sm" />
               </div>
             </div>
@@ -105,7 +79,7 @@ const Home = ({
                   alt="coin"
                   width={300}
                   height={300}
-                  onClick={handleCoinIconClick}
+                  onClick={handleCoinClick}
                 />
               </div>
               <div className={cn("home__main-energy")}>

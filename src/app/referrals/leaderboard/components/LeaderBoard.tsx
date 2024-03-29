@@ -1,19 +1,27 @@
 "use client";
 
+import { TopPointUsersProps } from "@/app/constants";
 import BackButton from "@/components/BackButton";
 import { Box } from "@/components/Box";
 import { Typography } from "@/components/Typography";
+import { getTelegram } from "@webbot/utils";
 import classnames from "classnames/bind";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FC } from "react";
 import styles from "./LeaderBoard.module.scss";
 import LeaderBoardList from "./LeaderBoardList";
-import { getTelegram } from "@webbot/utils";
 
 const cn = classnames.bind(styles);
 
-const LeaderBoard: FC = () => {
+const LeaderBoard: FC<TopPointUsersProps> = ({ TopPointUsers }) => {
+  const sortedUsers = TopPointUsers?.map((user) => {
+    return {
+      ...user,
+      point: user?.point.reduce((acc, p) => acc + p.amount, 0),
+    };
+  }).sort((a, b) => b.point - a.point);
+
   const router = useRouter();
 
   const telegram = getTelegram();

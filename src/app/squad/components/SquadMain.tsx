@@ -6,7 +6,6 @@ import { getTelegram } from "@webbot/utils";
 import Image from "next/image";
 
 import BackButton from "@/components/BackButton";
-import { SquadListApiKeys, squadListApi } from "@webbot/utils/api/squadListApi";
 import classNames from "classnames/bind";
 import { useRouter } from "next/navigation";
 import useSWR from "swr";
@@ -19,13 +18,6 @@ const cn = classNames.bind(styles);
 const SquadMain = (props: Props) => {
   const telegram = getTelegram();
   const router = useRouter();
-
-  const {
-    data: squadListData,
-    error,
-    isLoading,
-    mutate: refetch,
-  } = useSWR(SquadListApiKeys.getSquadList, squadListApi.getSquadList);
 
   return (
     <div className={cn("squad")}>
@@ -65,9 +57,9 @@ const SquadMain = (props: Props) => {
             </button>
           </Box>
           <div className={cn("squad__main-list")}>
-            {squadListData?.map((squad) => (
+            {/* {squadListData?.map((squad) => (
               <SquadItem key={squad.name} squad={squad} />
-            ))}
+            ))} */}
           </div>
         </div>
       </Box>

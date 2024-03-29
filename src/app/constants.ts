@@ -50,7 +50,7 @@ export const levelsMap = levels.reduce((acc, level) => {
 
 export const referredUsers = [
   {
-    firstName: "MEM max",
+    firstName: "MEM Max",
     level: "Bronze",
     points: [
       {
@@ -60,7 +60,7 @@ export const referredUsers = [
     status: "+ 43k",
   },
   {
-    firstName: "max Vulcan",
+    firstName: "Max Vulcan",
     level: "Diamod",
     points: [
       {
@@ -75,7 +75,7 @@ export const earnBoosters = [
   {
     id: 1,
     image: "/images/boosters/1.png",
-    title: "Earn 1000 max",
+    title: "Earn 1000 Max",
     amount: 3000,
   },
   {
@@ -117,14 +117,14 @@ export const specials = [
   {
     id: 4,
     image: "/images/specials/4.png",
-    title: "Earn 1000 max",
+    title: "Earn 1000 Max",
     amount: 3000,
     isCompleted: false,
   },
   {
     id: 5,
     image: "/images/specials/1.png",
-    title: "Follow max Coin",
+    title: "Follow Max Coin",
     amount: 100000,
     isCompleted: true,
   },
@@ -207,14 +207,14 @@ export const squads = [
   {
     id: 1,
     image: "/images/squad/1.png",
-    title: "MEM max",
+    title: "MEM Max",
     level: "Diamond",
     icon: "/icons/diamond-cup.svg",
   },
   {
     id: 2,
     image: "/images/squad/1.png",
-    title: "max Vulcan",
+    title: "Max Vulcan",
     level: "Bronze",
     icon: "/icons/bronze-cup.svg",
   },
@@ -242,7 +242,7 @@ export const squads = [
   {
     id: 6,
     image: "/images/squad/1.png",
-    title: "max kan",
+    title: "Max kan",
     level: "Bronze",
     icon: "/icons/bronze-cup.svg",
   },
@@ -269,7 +269,7 @@ export const squadMembers = [
   },
   {
     id: 4,
-    name: "MEM max",
+    name: "MEM Max",
     image: undefined,
     amount: 856245,
   },
@@ -338,7 +338,7 @@ export const boostHowItWorks = [
   {
     id: 1,
     image: "/icons/coin.svg",
-    title: "Tap-to-earn max",
+    title: "Tap-to-earn Max",
     description: "Yes, that’s easy",
   },
   {
@@ -388,4 +388,50 @@ export type DetailSquad = {
   name: string;
   no_of_players: number;
   members: Member[];
+};
+
+type Point = {
+  id: string;
+  userId: bigint;
+  amount: number;
+  pointReason: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+type ReferredUsers = {
+  id: string;
+  firstName: string;
+  lastName?: string | null | undefined;
+  userName?: string | null | undefined;
+  level: string;
+  referralStatus: string;
+  role: string;
+  status: string;
+  languageCode: string | null;
+  createdAt: Date;
+  updatedAt: Date;
+  point: Point[];
+};
+
+type User = {
+  id: string;
+  firstName: string;
+  lastName?: string | null | undefined;
+  userName?: string | null | undefined;
+  level: string;
+  referralStatus: string;
+  role: string;
+  status: string;
+  languageCode: string | null;
+  createdAt: Date;
+  updatedAt: Date;
+  point: Point[];
+  referredUsers: ReferredUsers[];
+  totalScore: number;
+  energy: number;
+};
+
+export type TopPointUsersProps = {
+  TopPointUsers: User[];
 };

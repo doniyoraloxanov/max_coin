@@ -17,7 +17,7 @@ export const useApp = create(
       },
     }),
     {
-      name: "max-app",
+      name: "Max-app",
     }
   )
 );

@@ -7,3 +7,6 @@ export const isEmpty = (obj: any) => {
 export const noop = () => {};
 export const promiseNoop = () => Promise.resolve();
 export const DEVELOPER_ID = "1839588386";
+
+export const getUsername = (user: any) =>
+  user.first_name || user.last_name || user.username || "";

@@ -9,7 +9,6 @@ import BackButton from "@webbot/components/BackButton";
 import { useRouter } from "next/navigation";
 import { getTgUser } from "@/utils";
 import { useEffect, useState } from "react";
-import { getSqaudDetailsAction } from "@/app/actions/action";
 import { DetailSquad } from "@/app/constants";
 
 const cn = classNames.bind(styles);
@@ -26,11 +25,6 @@ const SquadDetails = (props: Props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const squadData = await getSqaudDetailsAction(
-          props.squadName,
-          tgUser?.user?.id.toString()!
-        );
-        setSquads(squadData);
       } catch (e) {
         console.error("Error occured while fetching squads:", e);
       }

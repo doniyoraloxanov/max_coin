@@ -1,25 +1,24 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import classNames from "classnames/bind";
-import styles from "./BoostHeader.module.scss";
-import Image from "next/image";
-import { Typography } from "@webbot/components/Typography";
-import Link from "next/link";
-import RippleBase from "@webbot/components/RippleBase";
-import InfoBox from "@webbot/components/InfoBox";
+import { refillEnergyAction } from "@/app/actions/score";
 import { getTgUser } from "@/utils";
-import { getProfileAction, refillEnergyAction } from "@/app/actions/action";
+import InfoBox from "@webbot/components/InfoBox";
+import RippleBase from "@webbot/components/RippleBase";
+import { Typography } from "@webbot/components/Typography";
+import { GetSingleUser } from "@webbot/utils/getSingleUser";
+import classNames from "classnames/bind";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import styles from "./BoostHeader.module.scss";
 
 const cn = classNames.bind(styles);
 
-type Props = {};
-
-const BoostHeader = (props: Props) => {
+const BoostHeader = () => {
   const [turboOpen, setTurboOpen] = useState(false);
   const [energyOpen, setEnergyOpen] = useState(false);
-  const [balance, setBalance] = useState<string | null>(null);
   const tgUser = getTgUser();
+  const { user, mutate: refetch } = GetSingleUser(tgUser?.user?.id.toString()!);
 
   const handleRefillEnergy = async () => {
     try {
@@ -30,26 +29,13 @@ const BoostHeader = (props: Props) => {
     }
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getProfileAction(tgUser?.user?.id.toString()!);
-        setBalance(data.balance);
-      } catch (e) {
-        console.error("Error occured while fetching user profile:", e);
-      }
-    };
-
-    fetchData();
-  }, []);
-
   return (
     <div className={cn("header")}>
       <p className={cn("header__balance-title")}>Your Balance</p>
       <div className={cn("header__balance-container")}>
         <Image src="/icons/coin.svg" alt="boost" width={40} height={40} />
         <Typography variant="h1" className={cn("header__balance")}>
-          {balance}
+          {user?.totalScore}
         </Typography>
       </div>
       <Link href="/boost/works" className={cn("header__link")}>
