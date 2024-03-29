@@ -46,7 +46,7 @@ const LeaderBoard: FC = () => {
               className={cn("leaderboard__main-top-button")}
               onClick={() => {
                 telegram?.openLink(
-                  `https://t.me/${process.env.NEXT_PUBLIC_BOT_USERNAME}?start=refer`
+                  `${process.env.NEXT_PUBLIC_BOT_USERNAME}?start=refer`
                 );
                 telegram?.close();
               }}
