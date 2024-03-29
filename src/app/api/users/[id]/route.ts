@@ -9,7 +9,7 @@ export async function GET(
   try {
     const referredUsers = await prisma.user.findMany({
       orderBy: {
-        point: {
+        points: {
           _count: "desc",
         },
       },
@@ -18,7 +18,7 @@ export async function GET(
         referredById: params?.id,
       },
       include: {
-        point: true,
+        points: true,
       },
     });
 

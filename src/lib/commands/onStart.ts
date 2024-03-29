@@ -131,7 +131,7 @@ const onStart = async (ctx: BotContext) => {
     // ctx.session.user = createdUser;
   }
 
-  await ctx.reply("Hello!, Welcome to RadndomCoin", {
+  await ctx.reply("Hello!, Welcome to MaxCoin", {
     reply_markup: new InlineKeyboard().webApp("Launch App", process.env.HOST!),
   });
 };

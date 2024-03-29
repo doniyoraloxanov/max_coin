@@ -411,7 +411,7 @@ type ReferredUsers = {
   languageCode: string | null;
   createdAt: Date;
   updatedAt: Date;
-  point: Point[];
+  points: Point[];
 };
 
 type User = {
@@ -426,7 +426,7 @@ type User = {
   languageCode: string | null;
   createdAt: Date;
   updatedAt: Date;
-  point: Point[];
+  points: Point[];
   referredUsers: ReferredUsers[];
   totalScore: number;
   energy: number;

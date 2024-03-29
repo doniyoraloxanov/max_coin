@@ -17,7 +17,7 @@ const ReferredUsers = () => {
 
   const { users } = useUser(tgUser?.user?.id) as {
     users: Prisma.UserGetPayload<{
-      include: { point: true };
+      include: { points: true };
     }>[];
   };
 

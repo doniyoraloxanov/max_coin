@@ -19,11 +19,11 @@ export async function GET(
             lastName: true,
             username: true,
             id: true,
-            point: true,
+            points: true,
             referredById: true,
           },
         },
-        point: true,
+        points: true,
       },
     });
 

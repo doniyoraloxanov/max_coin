@@ -8,17 +8,17 @@ const Referrals = async () => {
   const topPointUsers = await prisma.user.findMany({
     take: 10,
     orderBy: {
-      point: {
+      points: {
         _count: "desc",
       },
     },
     where: {
-      point: {
+      points: {
         some: {},
       },
     },
     include: {
-      point: true,
+      points: true,
       referredUsers: true,
     },
   });

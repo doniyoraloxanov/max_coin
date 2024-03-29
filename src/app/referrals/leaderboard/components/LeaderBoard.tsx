@@ -18,7 +18,7 @@ const LeaderBoard: FC<TopPointUsersProps> = ({ TopPointUsers }) => {
   const sortedUsers = TopPointUsers?.map((user) => {
     return {
       ...user,
-      point: user?.point.reduce((acc, p) => acc + p.amount, 0),
+      point: user?.points.reduce((acc, p) => acc + p.amount, 0),
     };
   }).sort((a, b) => b.point - a.point);
 

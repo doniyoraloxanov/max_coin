@@ -9,60 +9,38 @@ datasource db {
 }
 
 model User {
-  id        String  @id @default(uuid())
-  firstName String
-  lastName  String?
-  username  String? @unique
+  id String @id @default(uuid())
 
+  firstName    String
+  lastName     String?
+  username     String? @unique
   languageCode String?
-  status       userStatus         @default(ACTIVE)
-  role         Role               @default(USER)
-  isVerified   VerificationStatus @default(IDLE)
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  status userStatus @default(ACTIVE)
+  role   Role       @default(USER)
 
   referredUsers  User[]        @relation("ReferredUsers")
   referredById   String?
   referredBy     User?         @relation("ReferredUsers", fields: [referredById], references: [id])
   referralStatus ReferalStatus @default(IDLE)
 
-  insta_profile_url String?
-  x_profile_url     String?
+  totalScore Int     @default(0)
+  energy     Int     @default(1000)
+  level      Level   @default(BRONZE)
+  points     Point[]
 
-  point        Point[]
-  Verification Verification[]
-
-  totalScore Int @default(0)
-  energy     Int @default(1000)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model Point {
-  id          String   @id @default(uuid())
-  userId      String
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  amount      Int      @default(0)
-  pointReason String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-}
-
-model Verification {
   id String @id @default(uuid())
 
-  title            String
-  shortDescription String?
-  description      String?
+  amount      Int    @default(0)
+  pointReason String
 
-  isCompleted  Boolean @default(false)
-  rewardAmount Float?
-
-  icon    String?
-  payload String?
-  url     String?
-
-  userId String?
-  user   User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -71,14 +49,6 @@ model Verification {
 enum ReferalStatus {
   IDLE
   ACTIVE
-}
-
-enum VerificationStatus {
-  IDLE   @map("IDEAL")
-  PASSED
-  FAILED
-
-  @@map("IsVerified")
 }
 
 enum Role {
@@ -90,4 +60,12 @@ enum userStatus {
   ACTIVE
   BANNED
   DELETED
+}
+
+enum Level {
+  BRONZE
+  SILVER
+  GOLD
+  PLATINUM
+  DIAMOND
 }
